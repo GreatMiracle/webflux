@@ -39,7 +39,7 @@ public class ReactiveMathService {
 //                .collect(Collectors.toList());
 //        return Flux.fromIterable(responseDtoList);
 //    }
-//
+
 
     public Mono<ResponseDto> multiply (Mono<MultiplyRequestDto> dtoMono){
         return dtoMono.map(
