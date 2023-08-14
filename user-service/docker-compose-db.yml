@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:14.3
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=123456@
+      - POSTGRES_DB=userdb
+#    volumes:
+#      - ./docker-volume/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - webflux
+
+  pgadmin:
+    image: dpage/pgadmin4:4.19
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=davidkambomoi@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=123456@
+#    volumes:
+#      - ./docker-volume/pgadmin:/var/lib/pgadmin
+    ports:
+      - 9000:80
+    networks:
+      - webflux
+
+networks:
+  webflux:
+
+#volumes:
+#  db:
+#  pgadmin:

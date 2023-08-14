@@ -1,0 +1,10 @@
+
+server:
+  port: 8092
+
+spring:
+  r2dbc:
+#    url: r2dbc:h2:mem:///userdb
+    url: r2dbc:postgresql://localhost:5432/postgres
+    username: admin
+    password: 123456@
